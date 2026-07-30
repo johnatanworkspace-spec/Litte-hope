@@ -24,7 +24,7 @@ A narrativa não é explicada diretamente. Ela é construída por meio do ambien
 
 ### Demonstração
 
-**Acesse a versão publicada:** [green-hope-laurel.iamdarckenss.chatgpt.site](https://green-hope-laurel.iamdarckenss.chatgpt.site)
+**Acesse a versão publicada:** [green-hope-laurel.iamdarckenss.chatgpt.site]()
 
 > A demonstração ainda utiliza o endereço original da primeira versão do projeto.
 
