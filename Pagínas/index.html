@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Planeje sua visita, explore o mapa e descubra a vida em Little Hope, Franklin.">
+    <title>Little Hope, Franklin | Site Oficial da Cidade</title>
+    <link rel="stylesheet" href="../CSSs/style.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+    <div class="civic-bar">
+        <div class="section-shell civic-bar-inner">
+            <span class="official-mark"><i></i> Site oficial da cidade de Little Hope</span>
+            <span>Quinta-feira, 17 de maio de 1962</span>
+            <a href="#notices">Avisos municipais</a>
+        </div>
+    </div>
+
+    <header class="site-header" id="site-header">
+        <div class="section-shell header-inner">
+            <a class="town-brand" href="#top" aria-label="Página inicial de Little Hope">
+                <span class="town-seal"><b>LH</b><i>1879</i></span>
+                <span><b>Little Hope</b><small>Condado de Laurel · Franklin</small></span>
+            </a>
+            <button type="button" class="menu-button" id="menu-button" aria-expanded="false"
+                aria-controls="primary-nav">
+                <span></span><span></span><span></span><b>Abrir menu</b>
+            </button>
+            <nav id="primary-nav" class="primary-nav" aria-label="Navegação principal">
+                <a href="#visit">Visite</a>
+                <a href="#map">Mapa</a>
+                <a href="#people">Moradores</a>
+                <a href="#archives">História</a>
+                <a href="#notices">Prefeitura</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="hero-photo" role="img" aria-label="Rua Principal de Little Hope diante das Montanhas Laurel">
+            </div>
+            <div class="hero-scrim"></div>
+            <div class="section-shell hero-inner">
+                <div class="hero-copy">
+                    <p class="hero-kicker"><span></span> Bem-vindo ao Vale Laurel</p>
+                    <h1 id="hero-title">Sempre há<br>um lugar para você<br>em Little Hope.</h1>
+                    <p>Uma pequena cidade entre as montanhas, conhecida por suas ruas acolhedoras, águas cristalinas e
+                        vizinhos que ainda têm tempo para dizer olá.</p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#map">Explore a cidade <span>→</span></a>
+                        <a class="button button-quiet" href="#visit">Planeje sua visita</a>
+                    </div>
+                </div>
+                <div class="hero-postcard" aria-label="Legenda da fotografia">
+                    <span>LH–62–0517</span>
+                    <p>Rua Principal em direção ao norte e às Montanhas Laurel.</p>
+                    <small>Fotografia cedida pelo Arquivo Municipal</small>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="section-shell hero-stats-inner">
+                    <div><span>Clima local</span><b>20° <small>Ensolarado</small></b></div>
+                    <div><span>População</span><b>6.842</b></div>
+                    <div><span>Altitude</span><b>536 m</b></div>
+                    <div><span>Prefeitura</span><b><i class="open-dot"></i> Aberta até 17h</b></div>
+                </div>
+            </div>
+        </section>
+
+        <div id="main-content">
+            <section class="welcome section-shell" id="visit" aria-labelledby="welcome-title">
+                <div class="welcome-intro">
+                    <p class="eyebrow">Sinta-se em casa</p>
+                    <h2 id="welcome-title">Algumas cidades devem<br>ser descobertas devagar.</h2>
+                </div>
+                <div class="welcome-copy">
+                    <p class="large-copy">Little Hope fica onde o Rio Laurel deixa as montanhas — uma cidade de varandas
+                        iluminadas, árvores frondosas, lojas familiares e longas noites de verão.</p>
+                    <p>Caminhe pela Rua Principal, atravesse o Lago Hope de barco, consulte um século de jornais na
+                        biblioteca ou simplesmente escolha um lugar no balcão do Juniper. Temos a impressão de que você
+                        encontrará algo que vale a pena recordar.</p>
+                    <a class="text-link" href="#map">Comece pelo mapa da cidade <span aria-hidden="true">↗</span></a>
+                </div>
+                <div class="welcome-cards">
+                    <article class="welcome-card card-mainstreet">
+                        <div class="card-index">01</div>
+                        <div>
+                            <p>Caminhe</p>
+                            <h3>Nossas ruas</h3><a href="#map">Encontre seu caminho <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="welcome-card card-lake">
+                        <div class="card-index">02</div>
+                        <div>
+                            <p>Respire</p>
+                            <h3>Ao ar livre</h3><a href="#map">Visite o Lago Hope <span>↗</span></a>
+                        </div>
+                    </article>
+                    <article class="welcome-card card-history">
+                        <div class="card-index">03</div>
+                        <div>
+                            <p>Recorde</p>
+                            <h3>Nossa história</h3><a href="#archives">Abra o arquivo <span>↗</span></a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="map-section section-shell" id="map" aria-labelledby="map-title">
+                <div class="section-heading map-heading">
+                    <div>
+                        <p class="eyebrow">Encontre seu caminho</p>
+                        <h2 id="map-title">Explore Little Hope</h2>
+                    </div>
+                    <p>Da Praça dos Fundadores até a margem do lago, quase todos os lugares ficam a uma agradável
+                        caminhada de vinte minutos.</p>
+                </div>
+
+                <div class="map-filter" aria-label="Filtrar locais do mapa">
+                    <button type="button" class="active" data-category="All" aria-pressed="true">Todos</button>
+                    <button type="button" data-category="Civic" aria-pressed="false">Cívico</button>
+                    <button type="button" data-category="Culture" aria-pressed="false">Cultura</button>
+                    <button type="button" data-category="Dining" aria-pressed="false">Gastronomia</button>
+                    <button type="button" data-category="Outdoors" aria-pressed="false">Natureza</button>
+                </div>
+
+                <div class="map-layout">
+                    <div class="map-frame">
+                        <div class="map-viewport" id="map-viewport" role="application"
+                            aria-label="Mapa interativo de Little Hope. Arraste para mover e use os controles de zoom.">
+                            <div class="map-canvas" id="map-canvas">
+                                <div class="map-mountains mountains-one"></div>
+                                <div class="map-mountains mountains-two"></div>
+                                <div class="map-river"></div>
+                                <div class="map-lake"><span>LAGO HOPE</span></div>
+                                <div class="railway"><span>FERROVIA DO VALE LAUREL</span></div>
+                                <div class="road main-road"><span>RUA PRINCIPAL</span></div>
+                                <div class="road laurel-road"><span>AVENIDA LAUREL</span></div>
+                                <div class="road hawthorne-road"><span>RUA HAWTHORNE</span></div>
+                                <div class="road orchard-road"><span>ALAMEDA ORCHARD</span></div>
+                                <div class="park-patch park-one"></div>
+                                <div class="park-patch park-two"></div>
+                                <div class="orchard" aria-hidden="true">
+                                    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                                </div>
+                                <div class="town-block block-one"></div>
+                                <div class="town-block block-two"></div>
+                                <div class="town-block block-three"></div>
+                                <div class="town-block block-four"></div>
+                                <div id="map-markers"></div>
+                                <p class="map-district district-north">COLINA NORTE</p>
+                                <p class="map-district district-center">PRAÇA DOS FUNDADORES</p>
+                                <p class="map-district district-south">POMAR SUL</p>
+                            </div>
+                            <div class="map-compass" aria-hidden="true"><b>N</b><i></i></div>
+                            <div class="map-controls" aria-label="Controles do mapa">
+                                <button type="button" id="zoom-in" aria-label="Aumentar zoom">+</button>
+                                <button type="button" id="zoom-out" aria-label="Diminuir zoom">−</button>
+                                <button type="button" class="reset-map" id="reset-map">Redefinir</button>
+                            </div>
+                            <p class="map-hint">Arraste para mover · Role para ampliar</p>
+                        </div>
+                        <div class="map-key"><span><i class="key-civic"></i> Pontos de interesse</span><span><i
+                                    class="key-park"></i> Áreas verdes</span><span><i class="key-water"></i>
+                                Água</span><span class="map-scale">400 metros</span></div>
+                    </div>
+
+                    <aside class="place-panel" id="place-panel" aria-live="polite">
+                        <div class="place-photo place-photo-town-hall" id="place-photo"><span
+                                id="place-category">Cívico</span>
+                            <p>Arquivo Municipal de Little Hope</p>
+                        </div>
+                        <div class="place-copy">
+                            <p class="place-number" id="place-number">Referência no mapa 01</p>
+                            <h3 id="place-name">Prefeitura de Little Hope</h3>
+                            <p class="place-description" id="place-description">O coração de colunas brancas de Little
+                                Hope atende aos moradores desde 1898.</p>
+                            <dl>
+                                <div>
+                                    <dt>Endereço</dt>
+                                    <dd id="place-address">Praça dos Fundadores, 1</dd>
+                                </div>
+                                <div>
+                                    <dt>Horário</dt>
+                                    <dd id="place-hours">Seg–Sex · 8h30–17h</dd>
+                                </div>
+                                <div>
+                                    <dt>Telefone</dt>
+                                    <dd id="place-phone">LH 4-0110</dd>
+                                </div>
+                            </dl>
+                            <p class="place-detail" id="place-detail">Visite a secretaria, consulte os avisos do
+                                conselho ou solicite na recepção o guia de arquitetura para passeio autônomo.</p>
+                            <div class="place-note"><span>Aviso</span><b id="place-note">Reunião do conselho ·
+                                    terça-feira, às 19h</b></div>
+                            <button class="text-link" type="button">Ver detalhes do local <span>↗</span></button>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="notices" id="notices" aria-labelledby="notices-title">
+                <div class="section-shell">
+                    <div class="section-heading notice-heading">
+                        <div>
+                            <p class="eyebrow">Pela cidade</p>
+                            <h2 id="notices-title">Notícias e avisos</h2>
+                        </div><a class="text-link" href="#notices">Ver mural de avisos <span>↗</span></a>
+                    </div>
+                    <div class="notice-grid">
+                        <article class="notice-card">
+                            <div class="notice-meta"><span>Aviso Municipal</span><time>17 de maio</time></div><span
+                                class="notice-index">01</span>
+                            <h3>Obras na rede de água da Rua Elm</h3>
+                            <p>As equipes trabalharão entre a Rua Pine e a Praça dos Fundadores na sexta-feira, das 8h
+                                ao meio-dia. O abastecimento não deverá ser interrompido.</p><a href="#notices">Ler
+                                aviso <span>↗</span></a>
+                        </article>
+                        <article class="notice-card">
+                            <div class="notice-meta"><span>Comunidade</span><time>19 de maio</time></div><span
+                                class="notice-index">02</span>
+                            <h3>Feira da primavera retorna sábado</h3>
+                            <p>Vinte e três fazendas e artesãos do vale estarão reunidos no jardim da prefeitura, das
+                                7h30 às 13h.</p><a href="#notices">Ler aviso <span>↗</span></a>
+                        </article>
+                        <article class="notice-card">
+                            <div class="notice-meta"><span>Obras Públicas</span><time>22 de maio</time></div><span
+                                class="notice-index">03</span>
+                            <h3>Calibração do relógio da torre</h3>
+                            <p>O sino dos quinze minutos poderá tocar às 14h07 durante os testes de rotina. Nenhuma ação
+                                dos moradores é necessária.</p><a href="#notices">Ler aviso <span>↗</span></a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="people section-shell" id="people" aria-labelledby="people-title">
+                <div class="people-intro">
+                    <p class="eyebrow">Vizinhos, não estranhos</p>
+                    <h2 id="people-title">Conheça Little Hope</h2>
+                    <p>Uma cidade é mais do que ruas e edifícios. Estas são algumas das pessoas que mantêm Little Hope
+                        em movimento desde o café da manhã até o apagar das luzes.</p><a class="button button-outline"
+                        href="#people">Diretório municipal <span>→</span></a>
+                </div>
+                <div class="resident-list">
+                    <article class="resident-card">
+                        <div class="resident-portrait portrait-elf" aria-hidden="true"><i
+                                class="portrait-ear left"></i><i class="portrait-ear right"></i><span>EM</span></div>
+                        <div class="resident-copy"><span>Moradora 01</span>
+                            <h3>Evelyn Mercer</h3><b>Arquivista Municipal</b>
+                            <p>Responsável pela sala do Condado de Laurel, botânica amadora e a pessoa certa para
+                                perguntar sobre qualquer casa construída antes de 1910.</p><button type="button">Ver
+                                ficha no diretório <span>↗</span></button>
+                        </div>
+                    </article>
+                    <article class="resident-card">
+                        <div class="resident-portrait portrait-dwarf" aria-hidden="true"><span>SD</span></div>
+                        <div class="resident-copy"><span>Morador 02</span>
+                            <h3>Samuel Dunn</h3><b>Proprietário do Juniper Diner</b>
+                            <p>Proprietário da terceira geração, capitão voluntário dos bombeiros e padeiro invicto da
+                                fita azul na feira do condado.</p><button type="button">Ver ficha no diretório
+                                <span>↗</span></button>
+                        </div>
+                    </article>
+                    <article class="resident-card">
+                        <div class="resident-portrait portrait-tiefling" aria-hidden="true"><i
+                                class="portrait-horn left"></i><i class="portrait-horn right"></i><span>MV</span></div>
+                        <div class="resident-copy"><span>Moradora 03</span>
+                            <h3>Dra. Mara Voss</h3><b>Médica de Família</b>
+                            <p>Nascida no Hospital Mercy, retornou após a faculdade de medicina e orienta o clube
+                                noturno de debates da escola.</p><button type="button">Ver ficha no diretório
+                                <span>↗</span></button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="archives" id="archives" aria-labelledby="archive-title">
+                <div class="section-shell archive-layout">
+                    <div class="archive-copy">
+                        <p class="eyebrow">Do arquivo municipal</p>
+                        <h2 id="archive-title">Toda cidade guarda<br>algumas histórias antigas.</h2>
+                        <p>A Biblioteca Carnegie preserva jornais, atas do conselho, anuários escolares, fotografias e
+                            coleções familiares de Little Hope. Novos materiais são exibidos todos os meses.</p><a
+                            class="button button-cream" href="#archives">Consultar arquivos deste mês <span>→</span></a>
+                    </div>
+                    <div class="archive-desk" aria-label="Seleção de documentos municipais digitalizados">
+                        <article class="archive-paper paper-photo"><span class="paper-tape"></span>
+                            <div class="mini-photo"></div>
+                            <p>RUA PRINCIPAL APÓS O PLANTIO DOS OLMOS DE 1964</p><small>Arquivado: 18 de outubro de 1959
+                                · Caixa 12</small>
+                        </article>
+                        <article class="archive-paper paper-news">
+                            <header>GAZETA DE LITTLE HOPE</header><time>12 de junho de 1957</time>
+                            <h3>RUA HAWTHORNE É ABERTA AO TRÁFEGO</h3>
+                            <div class="news-columns">Autoridades municipais cortaram a fita na mais nova rua
+                                residencial de Little Hope...</div>
+                        </article>
+                        <article class="archive-paper paper-form"><b>CIDADE DE LITTLE HOPE</b><span>DEPARTAMENTO DE
+                                OBRAS PÚBLICAS</span>
+                            <hr>
+                            <p>Solicitação de manutenção da iluminação</p>
+                            <dl>
+                                <div>
+                                    <dt>Recebido</dt>
+                                    <dd>30 FEV 1961</dd>
+                                </div>
+                                <div>
+                                    <dt>Situação</dt>
+                                    <dd>Concluído</dd>
+                                </div>
+                            </dl><i>LH–OP–3114</i>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="visitor-strip">
+                <div class="section-shell visitor-strip-inner">
+                    <div>
+                        <p class="eyebrow">Venha passar o dia</p>
+                        <h2>Deixaremos uma luz acesa.</h2>
+                    </div>
+                    <div class="visitor-actions"><a href="#map"><span>01</span><b>Como chegar</b><i>↗</i></a><a
+                            href="#map"><span>02</span><b>Onde ficar</b><i>↗</i></a><a
+                            href="#notices"><span>03</span><b>O que está acontecendo</b><i>↗</i></a></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="section-shell footer-main">
+            <div class="footer-brand"><span class="town-seal town-seal-light"><b>LH</b><i>1879</i></span>
+                <div>
+                    <h2>Cidade de Little Hope</h2>
+                    <p>“Um bom lugar para chamar de lar.”</p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Prefeitura</h3>
+                <p>Praça dos Fundadores, 1<br>Little Hope, Franklin 28419</p><a href="tel:+1555440110">LH 4-0110</a>
+            </div>
+            <div class="footer-column">
+                <h3>Links rápidos</h3><a href="#map">Mapa da cidade</a><a href="#notices">Avisos públicos</a><a
+                    href="#archives">Arquivo municipal</a>
+            </div>
+            <div class="footer-column">
+                <h3>Horário de atendimento</h3>
+                <p>Segunda a sexta<br>8h30–17h</p><span><i class="open-dot"></i> Repartições abertas</span>
+            </div>
+        </div>
+        <div class="section-shell footer-bottom"><span>© 1962 Cidade de Little Hope</span><span>Condado de Laurel ·
+                Estado de Franklin</span><a href="#top">Voltar ao topo ↑</a></div>
+    </footer>
+
+    <script src="little-hope.js"></script>
+</body>
+
+</html>
