@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /*
  * Little Hope — folha de estilos principal
  *
@@ -732,6 +734,7 @@ button {
   margin: 48px 0 20px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -770,34 +773,331 @@ button {
 
 .map-viewport {
   position: relative;
-  height: 650px;
+  width: 100%;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   touch-action: none;
   cursor: grab;
-  background: #dce2cc;
+  background: #d8dec9;
 }
 
 .map-viewport.is-dragging {
   cursor: grabbing;
 }
 
+.map-viewport:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: -3px;
+}
+
 .map-canvas {
   position: absolute;
-  inset: -7%;
-  min-width: 114%;
-  min-height: 114%;
-  overflow: hidden;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   transform-origin: center;
-  background-color: #e9e4d0;
-  background-image:
-    linear-gradient(rgba(67, 94, 73, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(67, 94, 73, 0.045) 1px, transparent 1px);
-  background-size: 24px 24px;
   transition: transform 100ms linear;
+}
+
+.map-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.map-labels,
+.map-markers {
+  position: absolute;
+  inset: 0;
+}
+
+.map-labels {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.map-markers {
+  z-index: 3;
+}
+
+.map-label {
+  position: absolute;
+  margin: 0;
+  color: rgba(28, 40, 32, 0.74);
+  font-family: var(--serif);
+  font-size: clamp(8px, 1vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translate(-50%, -50%);
+}
+
+.map-label-small {
+  font-size: clamp(6px, 0.72vw, 10px);
+  font-style: italic;
+  font-weight: 600;
 }
 
 .is-dragging .map-canvas {
   transition: none;
+}
+
+/* Elementos geográficos */
+
+.map-mountains {
+  position: absolute;
+  top: -7%;
+  width: 78%;
+  height: 29%;
+  border-radius: 50%;
+  background: repeating-radial-gradient(ellipse at 50% 100%, #6f896d 0 8px, #789174 9px 15px);
+  opacity: 0.62;
+  transform: rotate(-5deg);
+}
+
+.mountains-one {
+  left: -12%;
+}
+
+.mountains-two {
+  right: -24%;
+  transform: rotate(5deg);
+}
+
+.map-river {
+  position: absolute;
+  left: 7%;
+  top: 0;
+  width: 15%;
+  height: 110%;
+  border-left: 22px solid #8db4b6;
+  border-radius: 50%;
+  transform: rotate(8deg);
+  opacity: 0.9;
+}
+
+.map-river::after {
+  position: absolute;
+  inset: 0 0 0 13px;
+  content: "";
+  border-left: 2px dashed rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+}
+
+.map-lake {
+  position: absolute;
+  left: 8%;
+  bottom: 9%;
+  width: 21%;
+  height: 19%;
+  display: grid;
+  place-items: center;
+  border: 5px solid rgba(255, 255, 255, 0.36);
+  border-radius: 48% 54% 44% 58%;
+  background: #81aaae;
+  transform: rotate(-8deg);
+}
+
+.map-lake span {
+  color: rgba(25, 60, 54, 0.65);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  transform: rotate(8deg);
+}
+
+/* Vias e ferrovia */
+
+.road {
+  position: absolute;
+  background: #c2b9a2;
+  box-shadow: 0 0 0 1px rgba(92, 76, 54, 0.22), inset 0 0 0 3px #ddd5c1;
+}
+
+.road span {
+  position: absolute;
+  color: rgba(58, 65, 51, 0.63);
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+.main-road {
+  left: 51%;
+  top: 6%;
+  width: 18px;
+  height: 99%;
+  transform: rotate(-6deg);
+}
+
+.main-road span {
+  left: 22px;
+  top: 35%;
+  transform: rotate(90deg);
+}
+
+.laurel-road {
+  left: 10%;
+  top: 41%;
+  width: 87%;
+  height: 14px;
+  transform: rotate(3deg);
+}
+
+.laurel-road span {
+  left: 32%;
+  top: -12px;
+}
+
+.hawthorne-road {
+  left: 25%;
+  top: 27%;
+  width: 58%;
+  height: 11px;
+  transform: rotate(-13deg);
+}
+
+.hawthorne-road span {
+  left: 18%;
+  top: -11px;
+}
+
+.orchard-road {
+  left: 41%;
+  top: 72%;
+  width: 50%;
+  height: 10px;
+  transform: rotate(10deg);
+}
+
+.orchard-road span {
+  right: 18%;
+  top: 13px;
+}
+
+.railway {
+  position: absolute;
+  right: 12%;
+  top: -2%;
+  width: 8px;
+  height: 105%;
+  border-left: 2px solid #60594b;
+  border-right: 2px solid #60594b;
+  transform: rotate(8deg);
+}
+
+.railway::after {
+  position: absolute;
+  inset: 0 -4px;
+  content: "";
+  background: repeating-linear-gradient(0deg, #60594b 0 2px, transparent 2px 9px);
+}
+
+.railway span {
+  position: absolute;
+  left: 12px;
+  top: 17%;
+  color: rgba(40, 50, 38, 0.58);
+  font-size: 6px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  transform-origin: left center;
+}
+
+/* Vegetação e quarteirões */
+
+.park-patch {
+  position: absolute;
+  border: 1px dashed rgba(47, 93, 56, 0.3);
+  border-radius: 46%;
+  background:
+    radial-gradient(circle at 20% 20%, #66855d 0 4px, transparent 5px),
+    radial-gradient(circle at 70% 42%, #79956c 0 5px, transparent 6px),
+    radial-gradient(circle at 40% 72%, #5e7d58 0 4px, transparent 5px),
+    #b6c49b;
+  background-size: 34px 35px, 40px 44px, 48px 39px, auto;
+}
+
+.park-one {
+  left: 14%;
+  top: 48%;
+  width: 25%;
+  height: 31%;
+  transform: rotate(-8deg);
+}
+
+.park-two {
+  right: 19%;
+  top: 12%;
+  width: 18%;
+  height: 19%;
+  transform: rotate(12deg);
+}
+
+.orchard {
+  position: absolute;
+  right: 5%;
+  bottom: 4%;
+  width: 26%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px 10px;
+  transform: rotate(8deg);
+}
+
+.orchard i {
+  width: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #6b895e;
+  box-shadow: 4px 3px 0 #85a272;
+}
+
+.town-block {
+  position: absolute;
+  background: repeating-linear-gradient(90deg, #cabfa6 0 15px, #ae9f82 15px 17px, #ddd4bf 17px 25px);
+  box-shadow: inset 0 0 0 1px rgba(82, 68, 46, 0.24);
+}
+
+.block-one {
+  left: 39%;
+  top: 34%;
+  width: 17%;
+  height: 11%;
+  transform: rotate(-7deg);
+}
+
+.block-two {
+  left: 58%;
+  top: 43%;
+  width: 16%;
+  height: 11%;
+  transform: rotate(4deg);
+}
+
+.block-three {
+  left: 39%;
+  top: 57%;
+  width: 13%;
+  height: 10%;
+  transform: rotate(2deg);
+}
+
+.block-four {
+  left: 59%;
+  top: 61%;
+  width: 18%;
+  height: 10%;
+  transform: rotate(9deg);
 }
 
 /* Marcadores, bairros e controles */
@@ -805,82 +1105,101 @@ button {
 .map-marker {
   position: absolute;
   z-index: 8;
-  width: 32px;
-  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: filter 160ms ease;
+}
+
+.marker-icon {
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
-  padding: 0;
+  flex: 0 0 auto;
   border: 2px solid var(--paper);
-  border-radius: 50% 50% 50% 8px;
+  border-radius: 7px;
   background: var(--forest);
   color: white;
-  box-shadow: 0 5px 14px rgba(18, 46, 34, 0.3);
-  transform: translate(-50%, -100%) rotate(-45deg);
-  cursor: pointer;
-  transition: background 160ms ease, transform 160ms ease;
+  box-shadow: 0 4px 12px rgba(18, 46, 34, 0.34);
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
-.map-marker > span {
-  font-size: 8px;
-  font-weight: 800;
-  transform: rotate(45deg);
+.marker-icon svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
 }
 
-.map-marker strong {
-  position: absolute;
-  left: 42px;
-  top: 21px;
-  min-width: max-content;
+.marker-label {
+  max-width: 118px;
   padding: 5px 7px;
   border: 1px solid rgba(31, 48, 40, 0.18);
-  background: rgba(251, 248, 239, 0.9);
+  background: rgba(251, 248, 239, 0.92);
   color: var(--ink);
   font-size: 7px;
   font-weight: 800;
+  line-height: 1.15;
   letter-spacing: 0.06em;
+  text-align: left;
   text-transform: uppercase;
-  opacity: 0;
   pointer-events: none;
-  transform: rotate(45deg) translateY(4px);
-  transition: opacity 160ms ease, transform 160ms ease;
+  box-shadow: 0 2px 8px rgba(18, 46, 34, 0.12);
 }
 
 .map-marker:hover,
+.map-marker:focus-visible,
 .map-marker.selected {
-  background: var(--red);
-  transform: translate(-50%, -100%) rotate(-45deg) scale(1.16);
+  z-index: 12;
+  filter: brightness(1.05);
 }
 
-.map-marker:hover strong,
-.map-marker:focus-visible strong,
-.map-marker.selected strong {
-  opacity: 1;
-  transform: rotate(45deg) translateY(0);
+.map-marker:hover .marker-icon,
+.map-marker:focus-visible .marker-icon,
+.map-marker.selected .marker-icon {
+  transform: scale(1.14);
+  box-shadow: 0 6px 16px rgba(18, 46, 34, 0.42);
 }
 
-.map-district {
-  position: absolute;
-  margin: 0;
-  color: rgba(52, 70, 52, 0.28);
-  font-family: var(--serif);
-  font-size: 13px;
-  font-style: italic;
-  letter-spacing: 0.12em;
+.map-marker.selected .marker-icon {
+  outline: 3px solid rgba(183, 54, 42, 0.35);
+  outline-offset: 2px;
 }
 
-.district-north {
-  left: 46%;
-  top: 17%;
+.map-marker[data-category="civic"] .marker-icon {
+  background: #1762b5;
 }
 
-.district-center {
-  left: 44%;
-  top: 47%;
+.map-marker[data-category="culture"] .marker-icon,
+.map-marker[data-category="community"] .marker-icon {
+  background: #7c2eb2;
 }
 
-.district-south {
-  right: 9%;
-  bottom: 17%;
+.map-marker[data-category="health"] .marker-icon {
+  background: #d92d39;
+}
+
+.map-marker[data-category="food"] .marker-icon {
+  background: #e36b19;
+}
+
+.map-marker[data-category="nature"] .marker-icon {
+  background: #147548;
+}
+
+.map-marker[data-category="transport"] .marker-icon {
+  background: #174e9b;
 }
 
 .map-compass {
@@ -960,6 +1279,21 @@ button {
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.coordinate-readout {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 20;
+  padding: 9px 11px;
+  border: 1px solid rgba(31, 48, 40, 0.22);
+  background: rgba(251, 248, 239, 0.94);
+  color: var(--ink);
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 5px 18px rgba(31, 48, 40, 0.16);
 }
 
 .map-key {
@@ -1323,6 +1657,29 @@ button {
   background: #c6c1a9;
 }
 
+.resident-portrait::before {
+  position: absolute;
+  bottom: -32px;
+  width: 104px;
+  height: 130px;
+  z-index: -1;
+  content: "";
+  border-radius: 48% 48% 12% 12%;
+  background: #a56c4f;
+  box-shadow: inset 0 45px 0 #ceb498;
+}
+
+.resident-portrait::after {
+  position: absolute;
+  top: 43px;
+  width: 62px;
+  height: 66px;
+  z-index: -1;
+  content: "";
+  border-radius: 46% 46% 43% 43%;
+  background: #d2ae8c;
+  box-shadow: inset 0 16px 0 #5c493d;
+}
 
 .resident-portrait span {
   position: absolute;
@@ -1332,6 +1689,98 @@ button {
   font-family: var(--serif);
   font-size: 10px;
   letter-spacing: 0.08em;
+}
+
+.portrait-elf {
+  background: #a9b8a4;
+}
+
+.portrait-elf::before {
+  background: #6e7665;
+  box-shadow: inset 0 45px 0 #d6b592;
+}
+
+.portrait-elf::after {
+  background: #d7b593;
+  box-shadow: inset 0 18px 0 #754b32;
+}
+
+.portrait-ear {
+  display: none;
+  position: absolute;
+  top: 70px;
+  width: 26px;
+  height: 14px;
+  z-index: -2;
+  background: #d7b593;
+}
+
+.portrait-elf .portrait-ear {
+  display: block;
+}
+
+.portrait-ear.left {
+  left: 42px;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+.portrait-ear.right {
+  right: 42px;
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+}
+
+.portrait-dwarf {
+  background: #b6a98f;
+}
+
+.portrait-dwarf::before {
+  background: #4d5548;
+  box-shadow: inset 0 45px 0 #b88f74;
+}
+
+.portrait-dwarf::after {
+  height: 72px;
+  background: #bd9272;
+  box-shadow: inset 0 14px 0 #463c32, inset 0 -26px 0 #6f4b35;
+}
+
+.portrait-tiefling {
+  background: #b8a6a1;
+}
+
+.portrait-tiefling::before {
+  background: #2f4d4a;
+  box-shadow: inset 0 45px 0 #a77670;
+}
+
+.portrait-tiefling::after {
+  background: #a77670;
+  box-shadow: inset 0 18px 0 #2c2426;
+}
+
+.portrait-horn {
+  display: none;
+  position: absolute;
+  top: 29px;
+  width: 19px;
+  height: 39px;
+  z-index: -2;
+  border-radius: 70% 20% 20% 20%;
+  border-left: 6px solid #4a403b;
+  transform: rotate(-21deg);
+}
+
+.portrait-tiefling .portrait-horn {
+  display: block;
+}
+
+.portrait-horn.left {
+  left: 54px;
+}
+
+.portrait-horn.right {
+  right: 54px;
+  transform: scaleX(-1) rotate(-21deg);
 }
 
 .resident-copy {
@@ -1762,10 +2211,6 @@ button {
     grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
   }
 
-  .map-viewport {
-    height: 590px;
-  }
-
   .place-copy {
     padding-inline: 24px;
   }
@@ -1952,10 +2397,6 @@ button {
     border-bottom: 1px solid var(--line);
   }
 
-  .map-viewport {
-    height: 570px;
-  }
-
   .place-panel {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
@@ -2126,10 +2567,6 @@ button {
     margin-inline: -14px;
   }
 
-  .map-viewport {
-    height: 490px;
-  }
-
   .map-key {
     gap: 10px;
     overflow-x: auto;
@@ -2149,9 +2586,13 @@ button {
     padding: 25px 22px 30px;
   }
 
-  .map-marker strong,
+  .map-marker .marker-label,
   .map-hint {
     display: none;
+  }
+
+  .map-marker.selected .marker-label {
+    display: block;
   }
 
   .notices {
